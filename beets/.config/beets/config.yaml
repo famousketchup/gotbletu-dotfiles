@@ -1,0 +1,26 @@
+# http://www.maketecheasier.com/organise-media-library-from-command-line/
+# http://beets.readthedocs.org/en/v1.3.2/guides/main.html
+
+
+# current version: 1.3.2
+# location to import beets music ( if copy is set to yes)
+# create folder beforehand
+# directory: ~/Music/beets-music
+
+# database
+# library: ~/Music/beets-music/musiclibrary.blb
+
+# if set to yes, it will copy or move your imported music to the "direcrory" path
+import:
+      copy: no
+      move: no
+
+# extensions for beets
+# to see if plugins are enabled run, $ beet version
+plugins: fetchart embedart
+
+fetchart:
+  auto: no
+embedart:
+  auto: no
+

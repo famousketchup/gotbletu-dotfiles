@@ -1,0 +1,15 @@
+set imap_user = "gotbletu@yahoo.com"
+set imap_pass = "XXXXXX"
+set smtp_url = "smtps://gotbletu@smtp.mail.yahoo.com:465"
+set smtp_pass = "XXXXXX"
+set from = "gotbletu@yahoo.com"
+set realname = "Lord Tsuchikage"
+set folder = "imaps://imap.mail.yahoo.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Yahoo]/Drafts"
+set header_cache = ~/.mutt/com.yahoo.gotbletu/cache/headers
+set message_cachedir = ~/.mutt/com.yahoo.gotbletu/cache/bodies
+set certificate_file = ~/.mutt/com.yahoo.gotbletu/certificates
+
+
+

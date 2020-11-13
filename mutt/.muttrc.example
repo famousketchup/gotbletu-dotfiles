@@ -1,0 +1,123 @@
+# A basic .muttrc for use with Gmail
+# http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail
+# https://gist.github.com/miguelmota/9456162
+# https://github.com/narkoleptik/dotfiles/blob/master/.mutt/account.yahoo
+# http://profectium.blogspot.com/2013/12/how-to-set-up-hotmail-in-mutt.html
+
+
+# tutorial video: https://www.youtube.com/watch?v=_Unn7fysiE0
+# hotkeys to remeber
+# Ctrl+G = cancle a prompt
+# y = change to different mailboxes
+
+
+# Folder hooks
+folder-hook 'account.com.gmail.gotbletu' 'source ~/.mutt/account.com.gmail.gotbletu'
+folder-hook 'account.com.yahoo.gotbletu' 'source ~/.mutt/account.com.yahoo.gotbletu'
+folder-hook 'account.com.live.gotbletu' 'source ~/.mutt/account.com.live.gotbletu'
+folder-hook 'account.com.hotmail.gotbletu' 'source ~/.mutt/account.com.hotmail.gotbletu'
+
+# Default account
+source ~/.mutt/account.com.gmail.gotbletu
+
+# Macros for switching accounts
+macro index <F9> '<sync-mailbox><enter-command>source ~/.mutt/account.com.live.gotbletu<enter><change-folder>!<enter>'
+macro index <F10> '<sync-mailbox><enter-command>source ~/.mutt/account.com.yahoo.gotbletu<enter><change-folder>!<enter>'
+macro index <F11> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.gotbletu<enter><change-folder>!<enter>'
+macro index <F5> '<sync-mailbox><enter-command>source ~/.mutt/account.com.hotmail.gotbletu<enter><change-folder>!<enter>'
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+
+# Set default text editor
+set editor = "$EDITOR"
+
+
+#-------- Basic config, you can leave this as is {{{
+#------------------------------------------------------
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set imap_check_subscribed
+# set hostname = gmail.com
+set mail_check = 120
+set timeout = 300
+set imap_keepalive = 300
+# set record = "+[GMail]/Sent Mail"
+set move = no
+set include
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set auto_tag = yes
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/html *
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop 
+# }}}
+##-------- Gmail-style keyboard shortcuts {{{
+##------------------------------------------------------
+#macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
+#macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <delete-message>" "Gmail delete message"
+#macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
+#macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+#macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+#macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+## }}}
+##-------- Keybinding {{{
+##------------------------------------------------------
+## http://www.michnet.de/mutt/#bindings
+#bind pager l next-line
+#bind pager h previous-line
+# }}}
+#-------- Color Theme {{{
+#------------------------------------------------------
+
+color hdrdefault cyan default
+color attachment yellow default
+
+color header brightyellow default "From: "
+color header brightyellow default "Subject: "
+color header brightyellow default "Date: "
+
+color quoted green default
+color quoted1 cyan default
+color quoted2 green default
+color quoted3 cyan default
+
+color error     red             default         # error messages
+color message   white           default         # message  informational messages
+color indicator white           red             # indicator for the "current message"
+color status    white           blue            # status lines in the folder index sed for the mini-help line
+color tree      red             default         # the "tree" display of threads within the folder index
+color search    white           blue            # search matches found with search within the internal pager
+color markers   red             default         # The markers indicate a wrapped line hen showing messages with looong lines
+
+color index     yellow default  '~O'
+color index     yellow default  '~N'
+color index     brightred       default '~F'    # Flagged Messages are important!
+color index     blue default    '~D'            # Deleted Mails - use dark color as these are already "dealt with"
+# }}} 
+
+
+##-------- Sidebar {{{
+##------------------------------------------------------
+#set sidebar_visible = yes
+#macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+#macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+#
+## Ctrl-n, Ctrl-p to select next, previous folder.
+## Ctrl-o to open selected folder.
+#bind index,pager \CP sidebar-prev
+#bind index,pager \CN sidebar-next
+#bind index,pager \CO sidebar-open
+
+# }}}
+
+#For GPG support, add the following to your muttrc:
+#source /etc/Muttrc.gpg.dist
+

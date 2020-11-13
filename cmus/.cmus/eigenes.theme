@@ -1,0 +1,59 @@
+# cmus theme 29.10.2010
+# draft from http://wiki.ubuntuusers.de/cmus/Optik#Eigenes-Theme-erstellen
+
+# Verzeichnisfarbe
+set color_win_dir=red
+
+# Textfarbe
+set color_win_fg=red
+
+# Fenster Hintergrundfarbe
+set color_win_bg=default
+
+# Farbe Kommandozeile
+set color_cmdline_bg=default
+set color_cmdline_fg=red
+
+# Farbe der Fehlermeldung, welche in der Kommandozeile ausgegeben wird.
+set color_error=default
+
+# Farbe der Informationen, welche in der Kommandozeile angezeigt werden.
+set color_info=default
+
+# Farbe des aktuell wiedergegebenen Titels.
+set color_win_cur=blue
+
+# Farbe der Trennlinie zwischen den Fenstern (Ansichtsmodus 1).
+set color_separator=red
+
+# Farbe der Fenster-Titel (oberste Zeile des Bildschirms).
+set color_win_title_bg=black
+set color_win_title_fg=default
+
+# Farbe der Statuszeile.
+set color_statusline_bg=black
+set color_statusline_fg=white
+
+# Farbe der Zeile, die den momentan laufenden Titel anzeigt.
+set color_titleline_bg=default
+set color_titleline_fg=blue
+
+# Farbe der ausgewählten Zeile, die auch den aktuell laufenden Titel im aktiven Fenster anzeigt.
+set color_win_cur_sel_bg=default
+set color_win_cur_sel_fg=default
+
+# Farbe der ausgewählten Zeile, die auch den aktuell spielenden Titel im inaktiven Fenster zeigt.
+set color_win_inactive_cur_sel_bg=default
+set color_win_inactive_cur_sel_fg=default
+
+# Farbe der ausgewählten Zeile im inaktiven Fenster.
+set color_win_inactive_sel_bg=default
+set color_win_inactive_sel_fg=default
+
+# Farbe der ausgewählten Zeile im aktiven Fenster.
+set color_win_sel_bg=black
+set color_win_sel_fg=blue
+
+# Farbe der Kommandozeile
+set color_cmdline_bg=default
+set color_cmdline_fg=red

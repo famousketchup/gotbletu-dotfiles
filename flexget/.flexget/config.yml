@@ -1,0 +1,98 @@
+# Version:
+# flexget -V --> version 1.2.128 on 1/14/2014
+# sudo pip2 install flexget==1.2.128
+
+# crontab
+# @hourly flexget execute --cron
+
+# flexget check
+# flexget --test execute
+
+# http://flexget.com/wiki/Qualities
+
+# Setting up Flexget: https://www.youtube.com/playlist?list=PLB60EF62FBFCCD208
+# Using Movie Queue: https://www.youtube.com/watch?v=g31cCEervTw
+      # - rss: http://torrentz.eu/feed_verified?q=arrow
+tasks:
+  movie_queue_release:
+    movie_queue: yes
+    quality:
+      - <=1080p hdrip+
+    content_size:
+      min: 400
+      max: 2800
+      strict: no
+    download: ~/Downloads/
+    verify_ssl_certificates: no
+    inputs:
+      - rss: https://torrentz.eu/feed_verified?q=movies
+      - rss: https://kickass.so/usearch/seeds%3A100%20is_safe%3A1%20verified%3A1%20category%3Amovies/?rss=1
+
+  anime:
+    series:
+      - 'Naruto Shippuuden':
+          from_group:
+            - horriblesubs
+          quality: 720p
+      - 'Shingeki no Kyojin':
+          from_group:
+            - horriblesubs
+          quality: 720p
+    download: ~/Downloads/
+    verify_ssl_certificates: no
+    inputs:
+      - rss: http://www.nyaa.se/?page=rss&cats=1_37&term=horriblesubs+Naruto+Shippuuden
+      - rss: http://www.nyaa.se/?page=rss&cats=1_37&term=horriblesubs+Shingeki+no+Kyojin
+
+  comic:
+    series:
+      - 'The Walking Dead Digital'
+    download: ~/Downloads/
+    verify_ssl_certificates: no
+    inputs:
+      - rss: https://torrentz.eu/feed?q=The+Walking+Dead+Digital
+      - rss: https://kickass.so/usearch/the%20walking%20dead%20digital%20category%3Acomics%20verified%3A1/?rss=1
+
+  tv:
+    series:
+      - 'Arrow'
+      - 'Avengers Assemble'
+      - 'Blindspot'
+      - 'Castle'
+      - 'Dark Matter'
+      - 'Dual Survival'
+      - 'Game of Thrones'
+      - 'Live Free or Die'
+      - 'Mr Robot'
+      - 'Quantico'
+      - 'Scorpion'
+      - 'Star Wars Rebels'
+      - 'The Blacklist'
+      - 'The Flash'
+      - 'The Walking Dead'
+      - 'Z Nation':
+          quality: hdtv <=720p
+    download: ~/Downloads/
+    verify_ssl_certificates: no
+    inputs:
+      - rss: http://kat.cr/usearch/Arrow%20category%3Atv%20verified%3A1/?rss=1
+      - rss: http://torrentz.eu/feed?q=avengers+assemble
+      - rss: http://torrentz.eu/feed_verified?q=the+blacklist
+      - rss: http://torrentz.eu/feed_verified?q=blindspot
+      - rss: http://torrentz.eu/feed_verified?q=castle
+      - rss: http://torrentz.eu/feed_verified?q=dark+matter
+      - rss: http://torrentz.eu/feed_verified?q=defiance
+      - rss: http://kickass.so/usearch/dual+survival/?rss=1
+      - rss: http://torrentz.eu/feed_verified?q=falling+skies
+      - rss: http://torrentz.eu/feed_verified?q=the+flash
+      - rss: http://torrentz.eu/feed_verified?q=game+of+thrones
+      - rss: http://kickass.so/usearch/Live%20Free%20or%20Die%20-Breaking%20-Bad%20category%3Atv%20verified%3A1/?rss=1
+      - rss: http://torrentz.eu/feed_verified?q=mr+robot
+      - rss: http://torrentz.eu/feed_verified?q=quantico
+      - rss: http://torrentz.eu/feed_verified?q=star+wars+rebels
+      - rss: http://torrentz.eu/feed_verified?q=scorpion
+      - rss: http://torrentz.eu/feed_verified?q=under+the+dome
+      - rss: http://torrentz.eu/feed_verified?q=the+walking+dead
+      - rss: http://torrentz.eu/feed_verified?q=z+nation
+
+

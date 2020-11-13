@@ -1,0 +1,3 @@
+# Disable asking root password multiple times
+# https://wiki.archlinux.org/index.php/Yaourt#Yaourt_asking_for_password_twice
+SUDONOVERIF=1

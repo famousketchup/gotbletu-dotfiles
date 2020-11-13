@@ -1,0 +1,9 @@
+# Write your default config options here!
+vo="xv"		#video list from mplayer -vo help
+# ao="alsa"	#audio list from mplayer -vo help
+ao="pulse"	#audio list from mplayer -vo help
+afm="ffmpeg"
+# http://askubuntu.com/a/228979
+# font = "Ubuntu"
+# ass-font-color = "ffff0000"
+# ass-font-scale = "2

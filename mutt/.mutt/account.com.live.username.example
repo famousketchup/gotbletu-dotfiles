@@ -1,0 +1,14 @@
+set imap_user = "gotbletu@live.com"
+set imap_pass = "XXXXXXX"
+set smtp_url = "smtp://gotbletu@live.com@smtp.live.com:587/"
+set smtp_pass = "XXXXXXX"
+set from = "gotbletu@live.com"
+set realname = "Lord Hokage"
+set folder = "imaps://imap-mail.outlook.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Live]/Drafts"
+set header_cache = ~/.mutt/com.live.gotbletu/cache/headers            
+set message_cachedir = ~/.mutt/com.live.gotbletu/cache/bodies         
+set certificate_file = ~/.mutt/com.live.gotbletu/certificates  
+set ssl_force_tls = yes
+

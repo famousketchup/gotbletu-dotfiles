@@ -1,0 +1,12 @@
+set imap_user = "gotbletu@gmail.com"
+set imap_pass = "XXXXXXXXXX"
+set smtp_url = "smtp://gotbletu@smtp.gmail.com:587/"
+set smtp_pass = "XXXXXXXXXX"
+set from = "gotbletu@gmail.com"
+set realname = "Lord Mizukage"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set header_cache = ~/.mutt/com.gmail.gotbletu/cache/headers
+set message_cachedir = ~/.mutt/com.gmail.gotbletu/cache/bodies
+set certificate_file = ~/.mutt/com.gmail.gotbletu/certificates
